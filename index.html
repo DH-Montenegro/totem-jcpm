@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview Totem</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      width: 1080px;
+      height: 1920px;
+      transform-origin: center;
+    }
+
+    iframe {
+      width: 1080px;
+      height: 1920px;
+      border: 2px solid #444;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <iframe src="https://riomar-totem-04-09-25-v2-dot-zapt-web2.ue.r.appspot.com/#/place/-ozoj8y_jdamjbxc24o-/map/0?locationX=4912.586497169023&locationY=3309.1417110300767&angle=0&bottomNavigation=false&kioskMode=true"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function resizeIframe() {
+      const container = document.querySelector('.container');
+      const scaleX = window.innerWidth / 1080;
+      const scaleY = window.innerHeight / 1920;
+      const scale = Math.min(scaleX, scaleY);
+      container.style.transform = `scale(${scale})`;
+    }
+
+    window.addEventListener('resize', resizeIframe);
+    resizeIframe();
+  </script>
+</body>
+</html>
